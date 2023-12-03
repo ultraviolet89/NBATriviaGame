@@ -1,0 +1,44 @@
+$dokka.format:gfm-v1
+$dokka.linkExtension:md
+$dokka.location:com.violetta.nbatriviagame.controller////PointingToDeclaration/app/com.violetta.nbatriviagame.controller/index.md
+$dokka.location:com.violetta.nbatriviagame.controller/Trivia///PointingToDeclaration/app/com.violetta.nbatriviagame.controller/-trivia/index.md
+$dokka.location:com.violetta.nbatriviagame.controller/Trivia/Trivia/#kotlin.collections.MutableList[com.violetta.nbatriviagame.model.Question]/PointingToDeclaration/app/com.violetta.nbatriviagame.controller/-trivia/-trivia.md
+$dokka.location:com.violetta.nbatriviagame.controller/Trivia/checkAnswer/#kotlin.Int/PointingToDeclaration/app/com.violetta.nbatriviagame.controller/-trivia/check-answer.md
+$dokka.location:com.violetta.nbatriviagame.controller/Trivia/currentQuestion/#/PointingToDeclaration/app/com.violetta.nbatriviagame.controller/-trivia/current-question.md
+$dokka.location:com.violetta.nbatriviagame.controller/Trivia/getCurrentQuestionOptions/#/PointingToDeclaration/app/com.violetta.nbatriviagame.controller/-trivia/get-current-question-options.md
+$dokka.location:com.violetta.nbatriviagame.controller/Trivia/isGameOver/#/PointingToDeclaration/app/com.violetta.nbatriviagame.controller/-trivia/is-game-over.md
+$dokka.location:com.violetta.nbatriviagame.controller/Trivia/nextQuestion/#/PointingToDeclaration/app/com.violetta.nbatriviagame.controller/-trivia/next-question.md
+$dokka.location:com.violetta.nbatriviagame.controller/Trivia/score/#/PointingToDeclaration/app/com.violetta.nbatriviagame.controller/-trivia/score.md
+$dokka.location:com.violetta.nbatriviagame.model////PointingToDeclaration/app/com.violetta.nbatriviagame.model/index.md
+$dokka.location:com.violetta.nbatriviagame.model/Question///PointingToDeclaration/app/com.violetta.nbatriviagame.model/-question/index.md
+$dokka.location:com.violetta.nbatriviagame.model/Question/Question/#kotlin.String#kotlin.collections.List[kotlin.String]#kotlin.String/PointingToDeclaration/app/com.violetta.nbatriviagame.model/-question/-question.md
+$dokka.location:com.violetta.nbatriviagame.model/Question/answer/#/PointingToDeclaration/app/com.violetta.nbatriviagame.model/-question/answer.md
+$dokka.location:com.violetta.nbatriviagame.model/Question/options/#/PointingToDeclaration/app/com.violetta.nbatriviagame.model/-question/options.md
+$dokka.location:com.violetta.nbatriviagame.model/Question/text/#/PointingToDeclaration/app/com.violetta.nbatriviagame.model/-question/text.md
+$dokka.location:com.violetta.nbatriviagame.model/QuestionRepository///PointingToDeclaration/app/com.violetta.nbatriviagame.model/-question-repository/index.md
+$dokka.location:com.violetta.nbatriviagame.model/QuestionRepository/QuestionRepository/#/PointingToDeclaration/app/com.violetta.nbatriviagame.model/-question-repository/-question-repository.md
+$dokka.location:com.violetta.nbatriviagame.model/QuestionRepository/loadQuestions/#android.content.Context#kotlin.String/PointingToDeclaration/app/com.violetta.nbatriviagame.model/-question-repository/load-questions.md
+$dokka.location:com.violetta.nbatriviagame.utils////PointingToDeclaration/app/com.violetta.nbatriviagame.utils/index.md
+$dokka.location:com.violetta.nbatriviagame.utils/Globals///PointingToDeclaration/app/com.violetta.nbatriviagame.utils/-globals/index.md
+$dokka.location:com.violetta.nbatriviagame.utils/Globals/setRandomBackground/#android.app.Activity/PointingToDeclaration/app/com.violetta.nbatriviagame.utils/-globals/set-random-background.md
+$dokka.location:com.violetta.nbatriviagame.views////PointingToDeclaration/app/com.violetta.nbatriviagame.views/index.md
+$dokka.location:com.violetta.nbatriviagame.views/BaseTriviaActivity///PointingToDeclaration/app/com.violetta.nbatriviagame.views/-base-trivia-activity/index.md
+$dokka.location:com.violetta.nbatriviagame.views/BaseTriviaActivity/BaseTriviaActivity/#/PointingToDeclaration/app/com.violetta.nbatriviagame.views/-base-trivia-activity/-base-trivia-activity.md
+$dokka.location:com.violetta.nbatriviagame.views/BaseTriviaActivity/getQuestions/#/PointingToDeclaration/app/com.violetta.nbatriviagame.views/-base-trivia-activity/get-questions.md
+$dokka.location:com.violetta.nbatriviagame////PointingToDeclaration/app/com.violetta.nbatriviagame/index.md
+$dokka.location:com.violetta.nbatriviagame/CareerStatsModeActivity///PointingToDeclaration/app/com.violetta.nbatriviagame/-career-stats-mode-activity/index.md
+$dokka.location:com.violetta.nbatriviagame/CareerStatsModeActivity/CareerStatsModeActivity/#/PointingToDeclaration/app/com.violetta.nbatriviagame/-career-stats-mode-activity/-career-stats-mode-activity.md
+$dokka.location:com.violetta.nbatriviagame/CareerStatsModeActivity/getQuestions/#/PointingToDeclaration/app/com.violetta.nbatriviagame/-career-stats-mode-activity/get-questions.md
+$dokka.location:com.violetta.nbatriviagame/HowToPlayActivity///PointingToDeclaration/app/com.violetta.nbatriviagame/-how-to-play-activity/index.md
+$dokka.location:com.violetta.nbatriviagame/HowToPlayActivity/HowToPlayActivity/#/PointingToDeclaration/app/com.violetta.nbatriviagame/-how-to-play-activity/-how-to-play-activity.md
+$dokka.location:com.violetta.nbatriviagame/MainActivity///PointingToDeclaration/app/com.violetta.nbatriviagame/-main-activity/index.md
+$dokka.location:com.violetta.nbatriviagame/MainActivity/MainActivity/#/PointingToDeclaration/app/com.violetta.nbatriviagame/-main-activity/-main-activity.md
+$dokka.location:com.violetta.nbatriviagame/SingleSeasonModeActivity///PointingToDeclaration/app/com.violetta.nbatriviagame/-single-season-mode-activity/index.md
+$dokka.location:com.violetta.nbatriviagame/SingleSeasonModeActivity/SingleSeasonModeActivity/#/PointingToDeclaration/app/com.violetta.nbatriviagame/-single-season-mode-activity/-single-season-mode-activity.md
+$dokka.location:com.violetta.nbatriviagame/SingleSeasonModeActivity/getQuestions/#/PointingToDeclaration/app/com.violetta.nbatriviagame/-single-season-mode-activity/get-questions.md
+com.violetta.nbatriviagame
+com.violetta.nbatriviagame.controller
+com.violetta.nbatriviagame.model
+com.violetta.nbatriviagame.utils
+com.violetta.nbatriviagame.views
+

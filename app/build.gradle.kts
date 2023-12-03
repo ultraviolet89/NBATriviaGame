@@ -44,13 +44,17 @@ android {
 }*/
 
 // Dokka configuration for existing GFM task
-tasks.named<org.jetbrains.dokka.gradle.DokkaTask>("dokkaGfm") {
+/*tasks.named<org.jetbrains.dokka.gradle.DokkaTask>("dokkaGfm") {
     outputDirectory.set(file("$projectDir/docs"))
     dokkaSourceSets {
         named("main") {
             suppress.set(false)
         }
     }
+}*/
+// Dokka configuration for GFM (Markdown) output
+tasks.named<org.jetbrains.dokka.gradle.DokkaTask>("dokkaGfm") {
+    outputDirectory.set(file("$projectDir/docs"))
 }
 
 
