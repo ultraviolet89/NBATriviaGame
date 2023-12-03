@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NBATriviaGame</string>
+    <string name="nba_stats_trivia">NBA STATS TRIVIA</string>
+    <string name="career_stats_mode">Career Stats Mode</string>
+    <string name="single_season_mode">Single Season Mode</string>
+    <string name="how_to_play">How to Play</string>
+    <string name="score_text">Score: %1$d</string>
+</resources>
