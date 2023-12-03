@@ -9,6 +9,7 @@ To generate `dokka` documentation, run the following command from the root of th
 `./gradlew dokkaGfm`
 
 ## MVC Model
+```markdown
 Below is the MVC tree structure with descriptions for each component:
 NBATriviaGame/
 │
@@ -43,3 +44,4 @@ NBATriviaGame/
 │   └── build.gradle  # Project-level Gradle build file
 │
 └── README.md  # Project documentation and instructions
+```
