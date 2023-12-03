@@ -1,6 +1,9 @@
+import org.jetbrains.dokka.gradle.DokkaTask
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.dokka") version "1.9.10"
 }
 
 android {
@@ -34,6 +37,23 @@ android {
         jvmTarget = "1.8"
     }
 }
+
+// Dokka configuration
+/*tasks.withType<DokkaTask> {
+    outputDirectory.set(file("$projectDir/docs"))
+}*/
+
+// Dokka configuration for existing GFM task
+tasks.named<org.jetbrains.dokka.gradle.DokkaTask>("dokkaGfm") {
+    outputDirectory.set(file("$projectDir/docs"))
+    dokkaSourceSets {
+        named("main") {
+            suppress.set(false)
+        }
+    }
+}
+
+
 
 dependencies {
 
