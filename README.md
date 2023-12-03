@@ -4,10 +4,10 @@
 * John P. Baugh, Ph.D.
 
 ## Project initital Set-up
-Empty Views Activity
-API 27 ("Oreo"; Android 8.1)
-Kotlin DSL (build.gradle.kts)
-Package name: com.violetta.nbatriviagame
+* Empty Views Activity
+* API 27 ("Oreo"; Android 8.1)
+* Kotlin DSL (build.gradle.kts)
+* Package name: com.violetta.nbatriviagame
 
 `dokka` documentation: [here](app/docs/index.md)
 
