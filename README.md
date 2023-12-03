@@ -4,6 +4,7 @@
 * John P. Baugh, Ph.D.
 
 ## Project initital Set-up
+* Android Studio Hedgehot 2023.1.1
 * Empty Views Activity
 * API 27 ("Oreo"; Android 8.1)
 * Kotlin DSL (build.gradle.kts)
