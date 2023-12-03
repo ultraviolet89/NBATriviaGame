@@ -31,7 +31,7 @@ NBATriviaGame/
 │   │   │   │           └── nbatriviagame/
 │   │   │   │               ├── model/  # Data handling and logic
 │   │   │   │               │   ├── Question.kt  # Defines the data structure for a trivia question
-│   │   │   │               │   └── QuestionRepository.kt  # Manages data operations for trivia questions. Need to be converted json > db source.
+│   │   │   │               │   └── QuestionRepository.kt  # Manages data operations for trivia questions. //TODO Need to be converted json > db source.
 │   │   │   │               │
 │   │   │   │               ├── views/  # UI components and activities
 │   │   │   │               │   └── BaseTriviaActivity.kt  # Base class for trivia game activities
@@ -45,6 +45,7 @@ NBATriviaGame/
 │   │   │   │               └── SingleSeasonModeActivity.kt  # Activity for Single Season mode
 │   │   │   │
 │   │   │   └── res/  # Resources like layouts, strings, images, etc.
+│   │   │       └── db.json # //TODO current temporary data source. Need to be replaced with db source.
 │   │   │
 │   │   └── build.gradle  # Gradle build configuration file
 │   │
