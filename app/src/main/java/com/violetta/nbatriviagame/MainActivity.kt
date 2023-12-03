@@ -6,7 +6,20 @@ import android.os.Bundle
 import android.widget.Button
 import com.violetta.nbatriviagame.utils.Globals
 
+/**
+ * Main activity serving as the entry point of the NBA Trivia Game application.
+ *
+ * Displays the main menu of the game
+ * Modes of the game including
+ *  - Career Stats Mode
+ *  - Single Season Mode
+ *  - How to Play instructions
+ */
 class MainActivity : AppCompatActivity() {
+    /**
+     * Called when the activity is starting.
+     * @param savedInstanceState
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
