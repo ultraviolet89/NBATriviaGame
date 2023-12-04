@@ -78,7 +78,8 @@ NBATriviaGame/
         }
     }
 ```
-Above code initializes three buttons as the main menu of our NBA Trivia Game.\
+Above code initializes three buttons as the main menu of our NBA Trivia Game.<br/>
+<br/>
 
 - CODE:
 ```kotlin
