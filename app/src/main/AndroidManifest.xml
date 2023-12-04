@@ -24,6 +24,10 @@
         <activity android:name=".SingleSeasonModeActivity" />
         <activity android:name=".CareerStatsModeActivity" />
         <activity android:name=".HowToPlayActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
