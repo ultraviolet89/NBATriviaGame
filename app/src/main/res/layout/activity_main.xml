@@ -9,37 +9,45 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:gravity="center"
-        android:padding="16dp">
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-16dp">
 
         <TextView
             android:id="@+id/header"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="78dp"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="@font/amatic_sc"
             android:text="@string/nba_stats_trivia"
-            android:textSize="24sp"
-            android:layout_marginBottom="32dp"/>
+            android:textColor="#000000"
+            android:textSize="48sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/button_career_mode"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/career_stats_mode"/>
+            android:layout_height="60dp"
+            android:text="@string/career_stats_mode"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/button_single_season_mode"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp"
             android:text="@string/single_season_mode"
-            android:layout_marginTop="16dp"/>
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/button_how_to_play"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp"
             android:text="@string/how_to_play"
-            android:layout_marginTop="16dp"/>
+            android:textStyle="bold" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

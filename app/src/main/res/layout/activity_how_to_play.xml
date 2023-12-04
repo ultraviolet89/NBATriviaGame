@@ -31,63 +31,74 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:text="Welcome to NBA Stats Trivia! Test your knowledge about NBA players' career and season stats. Here's how to get started:"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="1. Select a game mode from the main menu."
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="2. Read the question and the stats carefully."
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="3. Choose the correct answer from the four options provided."
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="4. After selecting an answer, you'll see if you were correct or not."
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:text="5. Your score will be updated based on your answers."
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="6. Try to answer as many questions correctly as possible to achieve a high score!"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="32dp"
                 android:text="7. Have fun and learn more about your favorite NBA players and their achievements!"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textSize="16sp" />
 
             <Button
                 android:id="@+id/button_return_home"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif"
                 android:text="Return to Home"
-                android:layout_gravity="center"/>
+                android:textColorLink="#673AB7"
+                android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
 
