@@ -4,12 +4,12 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.violetta.nbatriviagame.R
-import com.violetta.nbatriviagame.utils.Globals
 import com.violetta.nbatriviagame.controller.Trivia
 import com.violetta.nbatriviagame.model.Question
-import androidx.appcompat.app.AlertDialog
+import com.violetta.nbatriviagame.utils.Globals
 
 /**
  * An abstract base activity for trivia game modes.
@@ -69,14 +69,14 @@ abstract class BaseTriviaActivity : AppCompatActivity() {
 
         buttons.forEachIndexed { index, button ->
             button.setOnClickListener {
-                if (triviaController.checkAnswer(index)) {
+                if (::triviaController.isInitialized && triviaController.checkAnswer(index)) {
                     updateScoreView()
-                }
-                if (triviaController.isGameOver) {
-                    showEndGameAlert()
-                } else {
-                    triviaController.nextQuestion()
-                    displayNextQuestion()
+                    if (triviaController.isGameOver) {
+                        showEndGameAlert()
+                    } else {
+                        triviaController.nextQuestion()
+                        displayNextQuestion()
+                    }
                 }
             }
         }
@@ -87,19 +87,25 @@ abstract class BaseTriviaActivity : AppCompatActivity() {
      * Updates the UI with the current question and sets the text for each answer button.
      */
     private fun displayNextQuestion() {
-        val question = triviaController.currentQuestion
-        findViewById<TextView>(R.id.textViewQuestion).text = question.text
+        if (::triviaController.isInitialized) {
+            val question = triviaController.getCurrentQuestion()
+            question?.let {
+                findViewById<TextView>(R.id.textViewQuestion).text = it.questionContent
 
-        val options = triviaController.getCurrentQuestionOptions()
-        val buttons = arrayOf(
-            findViewById(R.id.buttonOption1),
-            findViewById(R.id.buttonOption2),
-            findViewById(R.id.buttonOption3),
-            findViewById<Button>(R.id.buttonOption4)
-        )
+                val options = triviaController.getCurrentQuestionOptions()
+                val buttons = arrayOf(
+                    findViewById(R.id.buttonOption1),
+                    findViewById(R.id.buttonOption2),
+                    findViewById(R.id.buttonOption3),
+                    findViewById<Button>(R.id.buttonOption4)
+                )
 
-        options.forEachIndexed { index, option ->
-            buttons[index].text = option
+                options.forEachIndexed { index, option ->
+                    buttons.getOrNull(index)?.text = option
+                }
+            }
+        } else {
+            Log.e("TriviaGame", "Trivia controller is not initialized.")
         }
     }
 
