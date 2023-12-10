@@ -13,11 +13,10 @@ import com.violetta.nbatriviagame.views.BaseTriviaActivity
  * Loads [QuestionRepository] to the appropriate set of questions for this mode.
  * */
 class SingleSeasonModeActivity : BaseTriviaActivity() {
-    private lateinit var questionRepository: QuestionRepository
+    private val questionRepository = QuestionRepository()
 
     override fun getQuestions(): MutableList<Question> {
-        questionRepository = QuestionRepository(this)
-        return questionRepository.loadQuestions("single_season")
+        return questionRepository.loadQuestions(this, "single_season")
     }
 }
 

@@ -12,10 +12,9 @@ import com.violetta.nbatriviagame.views.BaseTriviaActivity
  * Loads [QuestionRepository] to the appropriate set of questions for this mode.
  */
 class CareerStatsModeActivity : BaseTriviaActivity() {
-    private lateinit var questionRepository: QuestionRepository
+    private val questionRepository = QuestionRepository()
 
     override fun getQuestions(): MutableList<Question> {
-        questionRepository = QuestionRepository(this)
-        return questionRepository.loadQuestions("career_stats")
+        return questionRepository.loadQuestions(this, "career_stats")
     }
 }
