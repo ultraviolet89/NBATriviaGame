@@ -1,45 +1,51 @@
 package com.violetta.nbatriviagame.model
 
 import android.content.Context
-import com.violetta.nbatriviagame.R
-import org.json.JSONObject
+import android.database.Cursor
+import android.util.Log
+class QuestionRepository(private val context: Context) {
 
-/**
- * Repository for managing trivia questions.
- *
- * Class provides functionality to load trivia questions from a data source.
- * Intermediary between the data source and the application logic.
- *
- * @constructor Creates a QuestionRepository instance.
- */
-class QuestionRepository {
-    /**
-     * Loads questions for the trivia game.
-     *
-     * Retrieves a list of questions based on the specified mode.
-     * Allows accesses of a data source, such as a local database or a JSON file, to obtain the questions.
-     *
-     * @param context The context used for accessing resources.
-     * @param mode The mode of the trivia game for which questions are loaded.
-     * @return A list of questions for the specified mode.
-     */
-    fun loadQuestions(context: Context, mode: String): MutableList<Question> {
-        val jsonString = context.resources.openRawResource(R.raw.db).bufferedReader().use { it.readText() }
-        val jsonObject = JSONObject(jsonString)
-        val questionsArray = jsonObject.getJSONArray("questions")
+    private val dbHelper = DatabaseHelper(context)
+
+    fun loadQuestions(mode: String): MutableList<Question> {
         val questions: MutableList<Question> = mutableListOf()
+        dbHelper.openDatabase()
 
-        for (i in 0 until questionsArray.length()) {
-            val questionJson = questionsArray.getJSONObject(i)
-            if (questionJson.getString("mode") == mode) {
-                val question = Question(
-                    questionJson.getString("question"),
-                    questionJson.getJSONArray("options").let { 0.until(it.length()).map { idx -> it.getString(idx) } },
-                    questionJson.getString("answer")
-                )
-                questions.add(question)
+        val database = dbHelper.getDatabase()
+
+        database?.let { db ->
+            try {
+                val questionsCursor: Cursor = db.rawQuery("SELECT * FROM Questions WHERE mode = '$mode'", null)
+                Log.d("QuestionRepository", "Questions Cursor Count: ${questionsCursor.count}")
+
+                if (questionsCursor.moveToFirst()) {
+                    do {
+                        val questionIdColumnIndex = questionsCursor.getColumnIndex("question_id")
+                        val questionTextColumnIndex = questionsCursor.getColumnIndex("question")
+                        val answerTextColumnIndex = questionsCursor.getColumnIndex("answer")
+
+                        // Check if column indices are valid
+                        if (questionIdColumnIndex != -1 && questionTextColumnIndex != -1 && answerTextColumnIndex != -1) {
+                            val questionId = questionsCursor.getInt(questionIdColumnIndex)
+                            val questionText = questionsCursor.getString(questionTextColumnIndex)
+                            val answerText = questionsCursor.getString(answerTextColumnIndex)
+
+                            val question = Question(questionId.toString(), listOf(questionText), answerText)
+                            questions.add(question)
+                        } else {
+                            Log.e("QuestionRepository", "Invalid column index")
+                        }
+                    } while (questionsCursor.moveToNext())
+                }
+                questionsCursor.close()
+            } catch (e: Exception) {
+                Log.e("QuestionRepository", "Error loading questions: ${e.message}")
+            } finally {
+                dbHelper.closeDatabase()
             }
         }
+
+        Log.d("QuestionRepository", "Questions Count: ${questions.size}")
         return questions
     }
 }

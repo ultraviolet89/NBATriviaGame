@@ -4,6 +4,7 @@ import com.violetta.nbatriviagame.model.Question
 import com.violetta.nbatriviagame.model.QuestionRepository
 import com.violetta.nbatriviagame.views.BaseTriviaActivity
 
+
 /**
  * Activity handles the display and interaction for the single season trivia mode.
  *
@@ -12,17 +13,11 @@ import com.violetta.nbatriviagame.views.BaseTriviaActivity
  * Loads [QuestionRepository] to the appropriate set of questions for this mode.
  * */
 class SingleSeasonModeActivity : BaseTriviaActivity() {
-    /** Repository instance for loading trivia questions. */
     private lateinit var questionRepository: QuestionRepository
 
-    /**
-     * Loads and returns a list of questions for the career stats mode.
-     * Overrides from [BaseTriviaActivity] and provides a specific implementation
-     * for loading questions tailored for the career stats mode of the game.
-     * @return MutableList of [Question] objects for the career stats mode.
-     */
     override fun getQuestions(): MutableList<Question> {
-        questionRepository = QuestionRepository()
-        return questionRepository.loadQuestions(this, "single_season")
+        questionRepository = QuestionRepository(this)
+        return questionRepository.loadQuestions("single_season")
     }
 }
+

@@ -1,9 +1,9 @@
 package com.violetta.nbatriviagame
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import com.violetta.nbatriviagame.utils.Globals
 
 /**
@@ -16,10 +16,7 @@ import com.violetta.nbatriviagame.utils.Globals
  *  - How to Play instructions
  */
 class MainActivity : AppCompatActivity() {
-    /**
-     * Called when the activity is starting.
-     * @param savedInstanceState
-     */
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -40,4 +37,5 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, HowToPlayActivity::class.java))
         }
     }
+
 }

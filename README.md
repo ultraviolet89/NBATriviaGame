@@ -9,6 +9,7 @@
 * API 27 ("Oreo"; Android 8.1)
 * Kotlin DSL (build.gradle.kts)
 * Package name: com.violetta.nbatriviagame
+* Sqllite file is located in res/raw directory
 
 `dokka` documentation: [here](app/docs/index.md)
 
