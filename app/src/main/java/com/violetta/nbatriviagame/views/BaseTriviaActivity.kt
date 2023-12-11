@@ -90,7 +90,7 @@ abstract class BaseTriviaActivity : AppCompatActivity() {
         if (::triviaController.isInitialized) {
             val question = triviaController.getCurrentQuestion()
             question?.let {
-                findViewById<TextView>(R.id.textViewQuestion).text = it.questionContent
+                findViewById<TextView>(R.id.textViewQuestion).text = it.text
 
                 val options = triviaController.getCurrentQuestionOptions()
                 val buttons = arrayOf(
@@ -105,7 +105,7 @@ abstract class BaseTriviaActivity : AppCompatActivity() {
                 }
             }
         } else {
-            Log.e("TriviaGame", "Trivia controller is not initialized.")
+            Log.e("BaseTriviaActivity", "Trivia controller is not initialized.")
         }
     }
 

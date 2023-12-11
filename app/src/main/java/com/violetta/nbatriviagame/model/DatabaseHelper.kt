@@ -1,51 +1,31 @@
 
 import android.content.Context
-import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
-import android.database.sqlite.SQLiteException
-import android.util.Log
-import com.violetta.nbatriviagame.R
-import com.violetta.nbatriviagame.model.Question
-import java.io.IOException
+import android.database.sqlite.SQLiteOpenHelper
+import java.io.FileOutputStream
 
 
-class DatabaseHelper(private val context: Context) {
+class DatabaseHelper(private val context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+    companion object {
+        private const val DATABASE_NAME = "nba.db"
+        private const val DATABASE_VERSION = 1
+    }
 
-    private val DATABASE_NAME = "nba.db"
-    private var database: SQLiteDatabase? = null
+    init {
+        copyDatabase()
+    }
 
-    fun openDatabase() {
-        if (database != null && database?.isOpen == true) {
-            return
-        }
+    fun openDatabase(): SQLiteDatabase {
         val dbPath = context.getDatabasePath(DATABASE_NAME)
-
-        if (!dbPath.exists()) {
-            copyDatabase()
-        }
-
-        database = try {
-            SQLiteDatabase.openDatabase(dbPath.path, null, SQLiteDatabase.OPEN_READWRITE)
-        } catch (e: SQLiteException) {
-            null
-        }
+        return SQLiteDatabase.openDatabase(dbPath.path, null, SQLiteDatabase.OPEN_READWRITE)
     }
 
-    fun closeDatabase() {
-        database?.close()
-    }
-
-
-    fun getDatabase(): SQLiteDatabase? {
-        return database
-    }
-    fun copyDatabase() {
+    private fun copyDatabase(){
         val dbPath = context.getDatabasePath(DATABASE_NAME)
-
-        if (!dbPath.exists()) {
-            val inputStream = context.resources.openRawResource(R.raw.nba)
-            val outputStream = dbPath.outputStream()
-
+        if(!dbPath.exists()){
+            dbPath.parentFile?.mkdirs()
+            val inputStream = context.assets.open(DATABASE_NAME)
+            val outputStream = FileOutputStream(dbPath)
             inputStream.use { input ->
                 outputStream.use { output ->
                     input.copyTo(output)
@@ -53,5 +33,10 @@ class DatabaseHelper(private val context: Context) {
             }
         }
     }
+    override fun onCreate(db: SQLiteDatabase) {
 
+    }
+    override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
+
+    }
 }

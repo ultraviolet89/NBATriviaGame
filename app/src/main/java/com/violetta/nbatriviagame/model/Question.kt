@@ -11,8 +11,7 @@ package com.violetta.nbatriviagame.model
  * @property answer The correct answer to the trivia question.
  */
 data class Question(
-    val questionId: Int,
-    val questionContent: String,
+    val text: String,
     val options: List<String>,
     val answer: String
 )

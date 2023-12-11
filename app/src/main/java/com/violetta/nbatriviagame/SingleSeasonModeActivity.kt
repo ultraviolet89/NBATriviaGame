@@ -1,7 +1,7 @@
 package com.violetta.nbatriviagame
 
+import QuestionRepository
 import com.violetta.nbatriviagame.model.Question
-import com.violetta.nbatriviagame.model.QuestionRepository
 import com.violetta.nbatriviagame.views.BaseTriviaActivity
 
 

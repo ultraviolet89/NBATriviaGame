@@ -40,8 +40,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, HowToPlayActivity::class.java))
         }
 
-        val dbHelper = DatabaseHelper(applicationContext)
-        dbHelper.copyDatabase()
     }
 
 }
