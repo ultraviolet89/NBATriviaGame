@@ -2,6 +2,7 @@ import android.content.Context
 import android.util.Log
 import com.violetta.nbatriviagame.model.Question
 import android.database.sqlite.SQLiteException
+import com.violetta.nbatriviagame.model.DatabaseHelper
 
 class QuestionRepository{
 
@@ -13,8 +14,7 @@ class QuestionRepository{
         try {
             val db = dbHelper.openDatabase()
             dbOpened = true
-            val questionsCursor =
-                db.rawQuery("SELECT * FROM Questions WHERE mode = ?", arrayOf(mode))
+            val questionsCursor = db.rawQuery("SELECT * FROM Questions WHERE mode = ?", arrayOf(mode))
             Log.d("QuestionRepository", "Questions Cursor Count: ${questionsCursor.count}")
 
             if (questionsCursor.moveToFirst()) {
@@ -29,8 +29,19 @@ class QuestionRepository{
                         val questionText = questionsCursor.getString(questionTextColumnIndex)
                         val answerText = questionsCursor.getString(answerTextColumnIndex)
 
+                        // Query to get options for this question
+                        val optionsCursor = db.rawQuery("SELECT option_text FROM Options WHERE question_id = ?", arrayOf(questionId.toString()))
+                        val options = mutableListOf<String>()
+
+                        if (optionsCursor.moveToFirst()) {
+                            do {
+                                options.add(optionsCursor.getString(questionIdColumnIndex))
+                            } while (optionsCursor.moveToNext())
+                        }
+                        optionsCursor.close()
+
                         val question =
-                            Question(questionId.toString(), listOf(questionText), answerText)
+                            Question(questionText, options, answerText)
                         questions.add(question)
                     } else {
                         Log.e("QuestionRepository", "Invalid column index")

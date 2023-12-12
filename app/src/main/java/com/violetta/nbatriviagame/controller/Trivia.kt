@@ -20,7 +20,7 @@ class Trivia(private val questions: MutableList<Question>) {
 
     /** Retrieves the current question from the list of questions */
     fun getCurrentQuestion(): Question? {
-        return questions?.getOrNull(currentQuestionIndex)
+        return questions.getOrNull(currentQuestionIndex)
     }
 
     fun checkAnswer(selectedIndex: Int): Boolean {

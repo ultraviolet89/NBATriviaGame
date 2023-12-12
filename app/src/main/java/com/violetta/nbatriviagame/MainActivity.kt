@@ -1,6 +1,5 @@
 package com.violetta.nbatriviagame
 
-import DatabaseHelper
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
