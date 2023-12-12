@@ -90,7 +90,7 @@ abstract class BaseTriviaActivity : AppCompatActivity() {
         if (::triviaController.isInitialized) {
             val question = triviaController.getCurrentQuestion()
             question?.let {
-                findViewById<TextView>(R.id.textViewQuestion).text = it.text
+                findViewById<TextView>(R.id.textViewQuestion).text = it.questionText
 
                 val options = triviaController.getCurrentQuestionOptions()
                 val buttons = arrayOf(
@@ -99,7 +99,7 @@ abstract class BaseTriviaActivity : AppCompatActivity() {
                     findViewById(R.id.buttonOption3),
                     findViewById<Button>(R.id.buttonOption4)
                 )
-
+                println(options.toString())
                 options.forEachIndexed { index, option ->
                     buttons.getOrNull(index)?.text = option
                 }
